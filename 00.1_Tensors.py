@@ -56,3 +56,33 @@ float_32_tensor = torch.tensor([3., 5., 7.],
 print(float_32_tensor.shape)
 print(float_32_tensor.dtype)
 print(float_32_tensor.device)
+
+print("----transpose of matrix----")
+tensor_A = torch.tensor([[[1, 2], [3, 4], [5, 6]]])
+print(tensor_A)
+tensor_A_T_1 = torch.transpose(tensor_A, 2, 3)
+print(tensor_A_T_1)
+tensor_A_T_2 = tensor_A.T
+print(tensor_A_T_2)
+
+print("----min,max,mean,sum...----")
+X = torch.arange(0, 100, 10)
+print(f"Min: {X.min()}")
+print(f"Max: {X.max()}")
+print(f"Mean: {X.type(torch.float32).mean()}")
+print(f"Sum: {X.sum()}")
+
+print("----position of min/max----")
+print("position/index of min: {X.argmin()}")
+print("position/index of max: {X.argmax()}")
+
+
+# torch.reshape(input, shape)	Reshapes input to shape (if compatible), can also use torch.Tensor.reshape().
+# Tensor.view(shape)	Returns a view of the original tensor in a different shape but shares the same data as the original tensor.
+# torch.stack(tensors, dim=0)	Concatenates a sequence of tensors along a new dimension (dim), all tensors must be same size.
+# torch.squeeze(input)	Squeezes input to remove all the dimenions with value 1.
+# torch.unsqueeze(input, dim)	Returns input with a dimension value of 1 added at dim.
+# torch.permute(input, dims)	Returns a view of the original input with its dimensions permuted (rearranged) to dims.
+
+# torch.from_numpy(ndarray) - NumPy array -> PyTorch tensor.
+# torch.Tensor.numpy() - PyTorch tensor -> NumPy array.
